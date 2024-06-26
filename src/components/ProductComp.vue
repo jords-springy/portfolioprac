@@ -1,13 +1,56 @@
 <template>
+    <div :style="{
+        backgroundImage: `url(${cover})`,
+        backgroundSize:'cover',
+        filter:'blur(4px)'
+        }">
+    </div>
     <div>
-        <h1>This is the product component !!  </h1>
+        <h1>This is the Product component</h1>
+        <!-- {{ bookTitle }} -->
+          <slot name="heading"></slot>
+          <slot name="author"></slot>
+          <slot name="pages"></slot>
+          <slot></slot>
+          <!-- <br>
+          {{ bookTitle.title }}
+          <br>
+           <img :src="bookTitle.cover">
+          <br>
+          {{ bookTitle.author }}
+          <br>
+          {{ bookTitle.year }}
+          <br>
+          {{ bookTitle.genre }}
+          <br>
+          {{ bookTitle.pages }}
+          <br>
+          {{ bookTitle.publisher }}
+          <br>
+          {{ bookTitle.isbn }} -->
     </div>
 </template>
 <script>
 export default {
-    
+    props:['cover']
 }
 </script>
-<style lang="">
-    
+<style scoped>
+h1{
+    color: #FFFFFF;
+    text-shadow: 3px 3px black;
+}
+div{
+    width:300px;
+    height: 400px;
+    position: absolute;
+    border-radius: 10%;
+}
 </style>
+
+
+
+
+
+
+
